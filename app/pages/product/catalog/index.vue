@@ -2,9 +2,9 @@
 import { useCurrency } from '~/composables/useCurrency';
 
 
-const products = await $fetch('/api/products')
-const { currency } = useCurrency('en-US', 'USD')
-definePageMeta({ layout: 'catalog' })
+const { data: products } = await useFetch('/api/products');
+const { currency } = useCurrency('en-US', 'USD');
+definePageMeta({ layout: 'catalog' });
 </script>
 
 <template>

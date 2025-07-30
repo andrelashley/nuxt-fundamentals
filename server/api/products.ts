@@ -1,5 +1,8 @@
-export default defineEventHandler((event) => {
-  return getProducts();
+export default defineEventHandler(async (event) => {
+  await new Promise(r => setTimeout(r, 700))
+   const products = getProducts();
+   const randomIndex = Math.floor(Math.random() * 8) + 2;
+   return products.slice(0, randomIndex);
 })
 
 
