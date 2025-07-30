@@ -1,9 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="bg-red-500">
-    aaaaa
-    Layout: default
+  <div>
+    <SiteHeader />
     <slot />
   </div>
 </template>

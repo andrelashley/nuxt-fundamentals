@@ -1,6 +1,9 @@
 <script setup lang="ts">
-const products = await $fetch('/api/products')
+import { useCurrency } from '~/composables/useCurrency';
 
+
+const products = await $fetch('/api/products')
+const { currency } = useCurrency('en-US', 'USD')
 definePageMeta({ layout: 'catalog' })
 </script>
 
@@ -10,7 +13,7 @@ definePageMeta({ layout: 'catalog' })
       <ul>
         <li v-for="product in products" :key="product.name">
           <div>{{ product.name }}</div>
-          <div>{{ product.price }}</div>
+          <div>{{ currency(product.price) }}</div>
         </li>
       </ul>
     </div>

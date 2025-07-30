@@ -2,8 +2,7 @@
 
 <template>
   <div>
-    aaaaa
-    Layout: catalog
+    <SiteHeader />
     <slot />
   </div>
 </template>
